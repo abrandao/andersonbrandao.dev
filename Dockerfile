@@ -1,6 +1,4 @@
-FROM ruby:2.7.1-alpine3.11
-
-ENV BUNDLER_VERSION=2.0.2
+FROM andbrandao/dev:0.1
 
 RUN apk add --update --no-cache \
       binutils-gold \
@@ -28,7 +26,8 @@ RUN apk add --update --no-cache \
       tzdata \
       yarn
 
-RUN gem install bundler -v 2.0.2
+RUN gem install bundler
+RUN bundle update
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install

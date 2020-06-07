@@ -18,7 +18,7 @@ services:
       RAILS_ENV: development
 
   database:
-    image: postgres:13-alpine
+    image: postgres:12.3-alpine
     restart: always
     container_name: database
     ports:
