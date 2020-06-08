@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - database
+    container_name: rails
     ports:
       - "3001:3001"
     volumes:
@@ -16,6 +17,9 @@ services:
     env_file: .env
     environment:
       RAILS_ENV: development
+    restart: unless-stopped
+    networks:
+      - app-network
 
   database:
     image: postgres:12.3-alpine
@@ -31,7 +35,46 @@ services:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: webserver
+    restart: unless-stopped
+    ports: 
+      - "81:81"
+    volumes:
+      - web-root:/usr/share/nginx/html
+      - ./nginx-conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/usr/share/nginx/html
+    depends_on:
+      - webserver
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email brandao@rubiti.com --agree-tos --no-eff-email --staging -d andersonbrandao.dev -d www.andersonbrandao.dev
+
 volumes:
   gem_cache:
   db_data:
   node_modules:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/brandao/andersonbrandao.dev/public
+      o: bind
+
+networks:
+  app-network:
+    driver: bridge
