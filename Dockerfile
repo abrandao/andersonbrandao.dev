@@ -1,38 +1,26 @@
-FROM andbrandao/dev:0.1
+FROM ruby:2.7.1-slim-buster
 
-RUN apk add --update --no-cache \
-      binutils-gold \
-      build-base \
-      curl \
-      file \
-      g++ \
-      gcc \
-      git \
-      less \
-      libstdc++ \
-      libffi-dev \
-      libc-dev \
-      linux-headers \
-      libxml2-dev \
-      libxslt-dev \
-      libgcrypt-dev \
-      make \
-      netcat-openbsd \
-      nodejs \
-      openssl \
-      pkgconfig \
-      postgresql-dev \
-      python \
-      tzdata \
-      yarn
+RUN apt-get update && apt-get -y install postgresql-client libpq-dev memcached imagemagick ffmpeg mupdf mupdf-tools libxml2-dev curl build-essential patch ruby-dev zlib1g-dev liblzma-dev nodejs
 
-RUN gem install bundler
-RUN bundle update
-WORKDIR /app
-COPY Gemfile Gemfile.lock ./
-RUN bundle check || bundle install
-RUN bundle config build.nokogiri --use-system-libraries
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get -y install yarn
+
+RUN mkdir -p /myapp
+WORKDIR /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
 COPY package.json yarn.lock ./
 RUN yarn install --check-files
-COPY . ./
-ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
+COPY . /myapp
+
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3001
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
