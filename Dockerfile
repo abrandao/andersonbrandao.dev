@@ -7,14 +7,14 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get -y install yarn
 
-RUN mkdir -p /myapp
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir -p /dev
+WORKDIR /dev
+COPY Gemfile /dev/Gemfile
+COPY Gemfile.lock /dev/Gemfile.lock
 RUN bundle install
 COPY package.json yarn.lock ./
 RUN yarn install --check-files
-COPY . /myapp
+COPY . /dev
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
