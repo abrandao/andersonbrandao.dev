@@ -11,6 +11,7 @@ hr {
 .main-margin {
   margin-left:340px;
   margin-right:40px;
+  margin-top: 64px;
 }
 
 .mySidebar {
@@ -29,18 +30,38 @@ hr {
   height: auto;
 }
 
+.w3-top {
+  margin-bottom: 32px;
+}
+
+.footer {
+  margin-top:75px;
+  padding-right:58px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.center {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 18%;
+  padding-bottom: 1.5%;
+}
+
 @media screen and (max-width: 450px) {
-  h1 {
-    color: green;
-  }
-  .w3-jumbo {
-    font-size: 20px;
+  .center {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 4%;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .showcase-container {
-    margin-top: 64px;
-    font-size: 20px;
+  .center {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 30%;
+    padding-bottom: 4%;
   }
 }

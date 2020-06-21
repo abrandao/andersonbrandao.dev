@@ -9,7 +9,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=jfuirI9324
     volumes:
-      - ./temp/db:/var/lib/postgresql/data
+      - ./tmp/db:/var/lib/postgresql/data
   
   app:
     build: .
