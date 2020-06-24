@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+    <%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!--===========================================================
+    Theme Name: Rubiti Institutional
+    Author: Anderson Brandão Lustosa
+    E-mail: brandao@rubiti.com
+    -- LINKS --
+    Website: http://www.rubiti.com
+    github: @abrandao @rubiti
+    ============================================================-->
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
