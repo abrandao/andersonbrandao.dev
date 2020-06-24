@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Anderson Brandao</title>
+
+    <meta name="description" content="Página do desenvolvedor web contendo conteúdos relacionados à programação e seus serviços.">
+    <link rel="canonical" href="https://andersonbrandao.dev/">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <!--===========================================================
@@ -22,5 +25,6 @@
 
   <body>
     <%= yield %>
+    <%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

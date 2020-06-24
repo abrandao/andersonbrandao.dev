@@ -3,5 +3,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import '../components/welcome_script';
 import '../stylesheets/welcome/welcome';
-//import '../components/welcome_script';
+
+require.context('../images', true)

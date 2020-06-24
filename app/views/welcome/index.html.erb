@@ -1,2 +1,69 @@
-<h1>Welcome#index 2</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-theme-d3 w3-collapse w3-top w3-large w3-padding mySidebar" id="mySidebar"><br>
+  <a href="javascript:void(0)" class="w3-button w3-hide-large w3-display-topleft sidebar-anchor" id="w3-close">Fechar Menu</a>
+  <div class="w3-container">
+    <img src="<%= asset_pack_path 'media/images/eu.jpeg' %>" class="w3-circle responsive" alt="Desenvolvedor" />
+    <h3 class="w3-padding-16"><b>Anderson Brandão</b></h3>
+  </div>
+  <hr>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-hover-white" id="w3-close">HOME</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-white" id="w3-close">HTML</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-white" id="w3-close">RAILS</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-white" id="w3-close">DOCKER</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-white" id="w3-close">NGINX</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-theme-d3 w3-xlarge w3-padding">
+  <div href="javascript:void(0)" class="w3-button w3-theme-l5 w3-margin-right" id="w3-open">&#9776;</div>
+  <span>Anderson Brandão</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main main-margin">
+
+  <!-- Posts -->
+  <div class="w3-container">
+    <h2 class="w3-xxlarge"><b>A forma correta de configurar o Docker com Rails</b></h2>
+    <h3 class="w3-text-theme"><i>As melhores formas de criar um stack</i></h3>
+    <img src="<%= asset_pack_path 'media/images/sushi.jpg' %>" class="responsive" alt="Desfile de moda" />
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#" class="w3-text-theme">leia mais</a>
+    </p>
+    <hr class="w3-round">
+  </div>
+
+  <div class="w3-container" id="services">
+    <h2 class="w3-xxlarge"><b>Cozinhando com maestria parte 1/6</b></h2>
+    <h3 class="w3-text-theme"><i>As melhores formas de criar um stack</i></h3>
+    <img src="<%= asset_pack_path 'media/images/gato.jpg' %>" class="responsive" alt="Desfile de moda" />
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#" class="w3-text-theme">leia mais</a>
+    </p>
+    <hr class="w3-round">
+  </div>
+
+  <div class="w3-container" id="services">
+    <h2 class="w3-xxlarge"><b>Cozinhando com maestria parte 1/6</b></h2>
+    <h3 class="w3-text-theme"><i>As melhores formas de criar um stack</i></h3>
+    <img src="<%= asset_pack_path 'media/images/desfile.jpg' %>" class="responsive" alt="Desfile de moda" />
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <a href="#" class="w3-text-theme">leia mais</a>
+    </p>
+    <hr class="w3-round">
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-theme-l4 w3-container w3-padding-32 footer"><p class="w3-right">Desenvolvido por <a href="https://www.rubiti.com" title="rubiti websites" target="_blank" class="w3-hover-opacity">rubiti.com</a></p></div>
