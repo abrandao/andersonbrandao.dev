@@ -4,3 +4,4 @@ require("@rails/activestorage").start()
 require("channels")
 
 import '../stylesheets/welcome/welcome';
+//import '../components/welcome_script';
