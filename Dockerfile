@@ -7,20 +7,20 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get -y install yarn
 
-RUN mkdir -p /dev
-WORKDIR /dev
-COPY Gemfile /dev/Gemfile
-COPY Gemfile.lock /dev/Gemfile.lock
+RUN mkdir -p /andersonbrandao.dev
+WORKDIR /andersonbrandao.dev
+COPY Gemfile /andersonbrandao.dev/Gemfile
+COPY Gemfile.lock /andersonbrandao.dev/Gemfile.lock
 RUN bundle install
 COPY package.json yarn.lock ./
 RUN yarn install --check-files
-COPY . /dev
+COPY . /andersonbrandao.dev
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3001
+EXPOSE 3002
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]
