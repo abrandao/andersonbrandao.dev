@@ -15,7 +15,6 @@ The initial idea of this project is a simple blog with a sidebar where the reade
 ### Post Show elements
   - Title
   - subtitle
-  - date
   - content
     -- tags(belongs_to)
 

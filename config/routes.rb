@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'tags/index'
   root 'welcome#index'
+  resources :posts
   resources :tags, only: [:index, :create, :new, :show, :destroy]
 end

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anderson Brandao</title>
+
+    <meta name="description" content="Página do desenvolvedor web contendo conteúdos relacionados à programação e seus serviços.">
+    <link rel="canonical" href="https://andersonbrandao.dev/">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+    <%= stylesheet_pack_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!--===========================================================
+    Theme Name: Rubiti Institutional
+    Author: Anderson Brandão Lustosa
+    E-mail: brandao@rubiti.com
+    -- LINKS --
+    Website: http://www.rubiti.com
+    github: @abrandao @rubiti
+    ============================================================-->
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= javascript_pack_tag 'posts', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>
