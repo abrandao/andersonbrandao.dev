@@ -8,9 +8,20 @@ The initial idea of this project is a simple blog with a sidebar where the reade
   - Posts
     -- Show
 
+  - Admin
+    - Posts CRUD
+    - Auth
+
 ### Post Show elements
   - Title
   - subtitle
   - date
   - content
-  - tags
+    -- tags(belongs_to)
+
+# TODO
+  - Tags CRUD related to Posts
+  - Posts CRUD
+  - Tags CRUD page
+  - Posts CRUD page
+  - Admin template
