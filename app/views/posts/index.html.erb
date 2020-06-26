@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Listing Articles</h1>
+
+<% @posts.each do |post| %>
+  <p>Title: <%= post.title %></p>
+  <p>Subtitle: <%= post.subtitle %></p>
+  <%= post.content %>
+  <%= link_to 'Mostrar', post_path(post) %>
+  <%= button_to 'Apagar', post_path(post),
+              method: :delete,
+              data: { confirm: 'Tem certeza?' } %>
+  <hr> 
+<% end %>

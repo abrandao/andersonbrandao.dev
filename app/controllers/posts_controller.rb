@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   
   layout 'posts'
+
+  def index
+    @posts = Post.all
+  end
   
   def new
     @post = Post.new
@@ -16,6 +20,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
   end
   
   private
