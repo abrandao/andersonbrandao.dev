@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  layout 'posts'
+  layout 'welcome'
 
   def index
     @posts = Post.all

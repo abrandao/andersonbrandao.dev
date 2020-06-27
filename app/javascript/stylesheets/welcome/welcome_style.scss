@@ -53,6 +53,15 @@ hr {
   padding-bottom: 1.5%;
 }
 
+.title {
+  text-decoration: none;
+}
+
+.title:hover {
+  text-decoration: none;
+  color: blue;
+}
+
 @media screen and (max-width: 450px) {
   .center {
     margin-left: 5%;

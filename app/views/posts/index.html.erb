@@ -1,13 +1,20 @@
 <h1>Listing Articles</h1>
-
+<table class="w3-table w3-striped w3-bordered">
+  <tr class="w3-blue">
+    <th>ID</th>
+    <th>Título</th>
+    <th>Subtítulo</th>
+    <th>Mostrar</th>
+    <th>Apagar</th>
+  </tr>
 <% @posts.each do |post| %>
-  <p>ID: <%= post.id %></p>
-  <p>Title: <%= post.title %></p>
-  <p>Subtitle: <%= post.subtitle %></p>
-  <%= post.content %>
-  <%= link_to 'Mostrar', post_path(post) %>
-  <%= button_to 'Apagar', post_path(post),
-              method: :delete,
-              data: { confirm: 'Tem certeza?' } %>
-  <hr>
+  <tr>
+    <td><%= post.id %></td>
+    <td><%= post.title %></td>
+    <td><%= post.subtitle %></td>
+    <td><%= button_to 'Mostrar', post_path(post), class: "w3-button w3-blue w3-round-xlarge", :method => :get %></td>
+    <td><%= button_to 'Apagar', post_path(post), class: "w3-button w3-red w3-round-xlarge", method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
 <% end %>
+</table>
+<hr>
