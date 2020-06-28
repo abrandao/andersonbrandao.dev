@@ -17,4 +17,10 @@
   </tr>
 <% end %>
 </table>
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= button_to "Deslogar", logout_path, :method => :get %>
+<% end %>
+
 <hr>
