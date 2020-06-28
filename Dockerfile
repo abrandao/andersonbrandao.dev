@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-slim-buster
+FROM andbrandao/andersonbrandao.dev:1.0
 
 RUN apt-get update && apt-get -y install postgresql-client libpq-dev memcached imagemagick ffmpeg mupdf mupdf-tools libxml2-dev curl build-essential patch ruby-dev zlib1g-dev liblzma-dev nodejs
 
