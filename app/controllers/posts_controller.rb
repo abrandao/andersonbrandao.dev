@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   
   layout 'welcome'
 
-  before_action :authorize
+  before_action :authorize, only: [:new, :create, :edit, :update, :delete]
 
   def index
     @posts = Post.all
