@@ -1,0 +1,17 @@
+<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+  <div class="field">
+    <%= form.label 'Título' %>
+    <%= form.text_field :title%>
+  </div>
+  <div class="field">
+    <%= form.label 'Subtítulo' %>
+    <%= form.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= form.rich_text_area :content %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.submit "Salvar post", class: "w3-button w3-blue w3-round-xlarge" %>
+  </div>
+<% end %>

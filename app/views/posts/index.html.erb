@@ -1,27 +1,29 @@
 <h1>Listing Articles</h1>
 <table class="w3-table w3-striped w3-bordered">
-  <tr class="w3-blue">
+  <tr class="w3-blue w3-center">
     <th>ID</th>
     <th>Título</th>
-    <th>Subtítulo</th>
-    <th>Mostrar</th>
-    <th>Apagar</th>
+    <th>Data</th>
+    <th class="w3-center">Mostrar</th>
+    <th class="w3-center">Editar</th>
+    <th class="w3-center">Apagar</th>
   </tr>
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <tr>
     <td><%= post.id %></td>
     <td><%= post.title %></td>
-    <td><%= post.subtitle %></td>
-    <td><%= button_to 'Mostrar', post_path(post), class: "w3-button w3-blue w3-round-xlarge", :method => :get %></td>
-    <td><%= button_to 'Apagar', post_path(post), class: "w3-button w3-red w3-round-xlarge", method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+    <td><%= post.created_at.day %>/<%= post.created_at.month %>/<%= post.created_at.year %></td>
+    <td class="w3-center"><%= button_to 'Mostrar', post_path(post), class: "w3-button w3-blue w3-round-xlarge", :method => :get %></td>
+    <td class="w3-center"><%= button_to 'Editar', edit_post_path(post), class: "w3-button w3-green w3-round-xlarge", :method => :get %></td>
+    <td class="w3-center"><%= button_to 'Apagar', post_path(post), class: "w3-button w3-red w3-round-xlarge", method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <% if current_user %>
   Logged in as <%= current_user.email %>.
-  <%= button_to "Deslogar", logout_path, :method => :get %>
+  <%= button_to "Deslogar", logout_path, :method => :get, class: "w3-button w3-blue w3-round-xlarge" %>
 <% end %>
-  <%= button_to "Nova postagem", new_post_path, :method => :get %>
+  <%= button_to "Nova postagem", new_post_path, :method => :get, class: "w3-button w3-blue w3-round-xlarge" %>
 
 <hr>

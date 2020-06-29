@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   
   layout 'welcome'
 
-  before_action :authorize, only: [:new, :create, :edit, :update, :delete]
+  before_action :authorize, only: [:show, :new, :create, :edit, :update, :delete]
 
   def index
     @posts = Post.all
@@ -19,6 +19,19 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
