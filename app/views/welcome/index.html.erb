@@ -3,7 +3,7 @@
   <div class="w3-container">
     <h2><%= link_to post.title, post_path(post), :method => :get, class: "w3-xxlarge title" %></h2>
     <h3 class="w3-text-theme"><i><%= post.subtitle %></i></h3>
-    <%= truncate(strip_tags(post.content.to_s), length: 600) %>
+    <%= truncate(strip_tags(post.content.to_s), length: 500) %>
     <%= link_to 'Leia mais', post_path(post), class: "w3-blue" %>
     <hr class="w3-round">
   </div>

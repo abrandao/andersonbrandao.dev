@@ -22,6 +22,5 @@
   Logged in as <%= current_user.email %>.
   <%= button_to "Deslogar", logout_path, :method => :get %>
 <% end %>
-  <%= button_to "Nova postagem", new_post_path, :method => :get %>
-
-<hr>
+  <br>
+  <%= button_to "Nova postagem", new_post_path, :method => :get, class: "w3-button w3-blue w3-round-xlarge w3-right" %>
