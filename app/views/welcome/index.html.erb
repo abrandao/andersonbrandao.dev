@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <!-- Posts -->
   <div class="w3-container">
     <h2><%= link_to post.title, post_path(post), :method => :get, class: "w3-xxlarge title" %></h2>

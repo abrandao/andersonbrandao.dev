@@ -7,7 +7,7 @@
     <th>Mostrar</th>
     <th>Apagar</th>
   </tr>
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <tr>
     <td><%= post.id %></td>
     <td><%= post.title %></td>
