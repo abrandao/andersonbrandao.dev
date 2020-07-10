@@ -3,7 +3,8 @@
   <tr class="w3-blue w3-center">
     <th>ID</th>
     <th>Título</th>
-    <th>Data</th>
+    <th class="w3-center">Visualizações</th>
+    <th class="w3-center">Data</th>
     <th class="w3-center">Mostrar</th>
     <th class="w3-center">Editar</th>
     <th class="w3-center">Apagar</th>
@@ -12,7 +13,8 @@
   <tr>
     <td><%= post.id %></td>
     <td><%= post.title %></td>
-    <td><%= post.created_at.day %>/<%= post.created_at.month %>/<%= post.created_at.year %></td>
+    <td class="w3-center"><%= post.impressionist_count  %></td>
+    <td class="w3-center"><%= post.created_at.day %>/<%= post.created_at.month %>/<%= post.created_at.year %></td>
     <td class="w3-center"><%= button_to 'Mostrar', post_path(post), class: "w3-button w3-blue w3-round-xlarge", :method => :get %></td>
     <td class="w3-center"><%= button_to 'Editar', edit_post_path(post), class: "w3-button w3-green w3-round-xlarge", :method => :get %></td>
     <td class="w3-center"><%= button_to 'Apagar', post_path(post), class: "w3-button w3-red w3-round-xlarge", method: :delete, data: { confirm: 'Tem certeza?' } %></td>

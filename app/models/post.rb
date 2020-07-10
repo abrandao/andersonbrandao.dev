@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+
+  is_impressionable
+
   after_validation :set_slug, only: [:create, :update]
   
   has_rich_text :content
